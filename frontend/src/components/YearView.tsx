@@ -46,7 +46,6 @@ export default function YearView({ currentDate, items, onMonthClick, onItemClick
     }
 
     const monthName = MONTHS[monthIndex];
-    const isCurrentMonth = today.year() === year && today.month() === monthIndex;
 
     return (
       <div 

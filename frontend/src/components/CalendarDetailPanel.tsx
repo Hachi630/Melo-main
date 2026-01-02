@@ -1,7 +1,6 @@
-import { Button, Tabs, Empty, Typography, Tooltip, Tag, Space } from 'antd';
+import { Button, Tabs, Empty, Typography, Tooltip, Tag } from 'antd';
 import { 
   PlusOutlined, 
-  CopyOutlined, 
   EditOutlined, 
   DeleteOutlined,
   MoreOutlined,
@@ -11,7 +10,6 @@ import {
 import dayjs, { Dayjs } from 'dayjs';
 import { CalendarItem } from '../services/calendarService';
 import styles from '../pages/Calendar.module.css';
-import { useEffect } from 'react';
 
 const { Text, Title } = Typography;
 

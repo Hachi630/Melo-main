@@ -37,17 +37,21 @@ const genderOptions = [
 ]
 
 interface PersonalProps {
-  open: boolean
-  onClose: () => void
+  open?: boolean
+  onClose?: () => void
   user?: User | null
   onLoginSuccess?: (user: User) => void
+  isLoggedIn?: boolean
+  onLogout?: () => void
 }
 
 export default function Personal({
-  open,
-  onClose,
+  open = true,
+  onClose = () => {},
   user: propUser,
   onLoginSuccess,
+  isLoggedIn,
+  onLogout,
 }: PersonalProps) {
   const [isEditing, setIsEditing] = useState(false)
   const [loading, setLoading] = useState(false)
@@ -72,8 +76,6 @@ export default function Personal({
   const [passwordLoading, setPasswordLoading] = useState(false)
   const [newPassword, setNewPassword] = useState('')
   const [confirmPassword, setConfirmPassword] = useState('')
-  const [showNewPassword, setShowNewPassword] = useState(false)
-  const [showConfirmPassword, setShowConfirmPassword] = useState(false)
 
   // Load user data when modal opens
   useEffect(() => {
@@ -270,7 +272,7 @@ export default function Personal({
   const isLocalAuthUser = user?.authProvider === 'local' || !user?.authProvider
 
   const renderField = (
-    label: string,
+    _label: string,
     value: string,
     fieldName: keyof typeof formData,
     isTextArea = false

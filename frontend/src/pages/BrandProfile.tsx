@@ -34,7 +34,7 @@ import styles from "./BrandProfile.module.css";
 import { User, authService, CompanyData } from "../services/authService";
 import { uploadService } from "../services/uploadService";
 import { chatService } from "../services/chatService";
-import { PictureOutlined, RobotOutlined } from "@ant-design/icons";
+import { RobotOutlined } from "@ant-design/icons";
 
 const { Content } = Layout;
 
@@ -53,7 +53,6 @@ const industryOptions = [
   { value: "food", label: "Food & Restaurant" },
 ];
 
-const initialAudience = ["Yoga lovers", "Interior design enthusiast"];
 
 // CompanyData is now imported from authService
 

@@ -377,24 +377,6 @@ export default function CalendarItemModal({
     }
   }
 
-  const handleImageUploadBase64 = async (file: File) => {
-    setUploadingImage(true)
-    try {
-      const base64 = await uploadService.convertToBase64(file)
-      const mimeType = file.type || 'image/png'
-      const response = await uploadService.uploadImageBase64(base64, mimeType)
-      if (response.success && response.imageUrl) {
-        setImageUrl(response.imageUrl)
-        message.success('Image uploaded successfully')
-      } else {
-        message.error(response.message || 'Failed to upload image')
-      }
-    } catch (error) {
-      message.error('Failed to upload image')
-    } finally {
-      setUploadingImage(false)
-    }
-  }
 
   const handleFileSelect: UploadProps['onChange'] = (info) => {
     const file = info.file.originFileObj || (info.file as any).originFileObj || info.file

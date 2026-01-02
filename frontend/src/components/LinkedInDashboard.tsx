@@ -36,12 +36,10 @@ import {
   SendOutlined,
   PictureOutlined,
   DeleteOutlined,
-  FileImageOutlined,
   BankOutlined,
   InstagramOutlined,
   CalendarOutlined,
   PlusOutlined,
-  EditOutlined,
   GlobalOutlined,
   EnvironmentOutlined,
   LinkOutlined,
@@ -51,12 +49,9 @@ import {
   TrophyOutlined,
   BulbOutlined,
   QuestionCircleOutlined,
-  SmileOutlined,
   CommentOutlined,
   TwitterOutlined,
   FacebookOutlined,
-  MenuFoldOutlined,
-  MenuUnfoldOutlined,
 } from "@ant-design/icons";
 import { useState, useCallback, useEffect } from "react";
 import dayjs from "dayjs";
@@ -86,7 +81,6 @@ import {
   uploadVideoToLinkedIn as uploadVideo,
   createLinkedInPostWithVideo,
   videoFileToBase64,
-  ReactionType,
 } from "../services/linkedinService";
 import {
   getTwitterStatus,
@@ -161,7 +155,6 @@ export default function LinkedInDashboard({
   const [selectedImage, setSelectedImage] = useState<File | null>(null);
   const [imagePreview, setImagePreview] = useState<string | null>(null);
   const [posting, setPosting] = useState(false);
-  const [postModalOpen, setPostModalOpen] = useState(false);
   const [uploadProgress, setUploadProgress] = useState(0);
 
   // LinkedIn Enhanced post type states
@@ -185,15 +178,6 @@ export default function LinkedInDashboard({
   const [twitterImagePreview, setTwitterImagePreview] = useState<string | null>(
     null
   );
-  const [twitterSelectedVideo, setTwitterSelectedVideo] = useState<File | null>(
-    null
-  );
-  const [twitterVideoPreview, setTwitterVideoPreview] = useState<string | null>(
-    null
-  );
-  const [twitterLinkUrl, setTwitterLinkUrl] = useState("");
-  const [twitterLinkTitle, setTwitterLinkTitle] = useState("");
-  const [twitterLinkDescription, setTwitterLinkDescription] = useState("");
   const [twitterPosting, setTwitterPosting] = useState(false);
 
   // Instagram Post states
@@ -214,7 +198,6 @@ export default function LinkedInDashboard({
   const [instagramLinkUrl, setInstagramLinkUrl] = useState("");
   const [instagramLinkTitle, setInstagramLinkTitle] = useState("");
   const [instagramLinkDescription, setInstagramLinkDescription] = useState("");
-  const [instagramPosting, setInstagramPosting] = useState(false);
 
   // Facebook Post states
   const [facebookPostText, setFacebookPostText] = useState("");
@@ -999,24 +982,6 @@ export default function LinkedInDashboard({
     setTwitterImagePreview(null);
   };
 
-  // Twitter/X Video handlers
-  const handleTwitterVideoSelect = (file: File) => {
-    if (file.size > 200 * 1024 * 1024) {
-      message.error("Video must be smaller than 200MB");
-      return false;
-    }
-    setTwitterSelectedVideo(file);
-    setTwitterVideoPreview(URL.createObjectURL(file));
-    return false;
-  };
-
-  const handleTwitterVideoClear = () => {
-    if (twitterVideoPreview) {
-      URL.revokeObjectURL(twitterVideoPreview);
-    }
-    setTwitterSelectedVideo(null);
-    setTwitterVideoPreview(null);
-  };
 
   // Twitter/X Post handler
   const handleTwitterPost = async () => {
@@ -1323,7 +1288,6 @@ export default function LinkedInDashboard({
     if (selectedPlatform !== "linkedin") {
       // Twitter content
       if (selectedPlatform === "twitter") {
-        const isTwitterConnected = twitterStatus?.connected === true;
         if (loadingTwitter) {
           return (
             <div style={{ textAlign: "center", padding: "60px 0" }}>
@@ -1354,7 +1318,6 @@ export default function LinkedInDashboard({
 
       // Instagram content
       if (selectedPlatform === "instagram") {
-        const isInstagramConnected = instagramStatus?.connected === true;
         if (loadingInstagram) {
           return (
             <div style={{ textAlign: "center", padding: "60px 0" }}>
@@ -1384,7 +1347,6 @@ export default function LinkedInDashboard({
 
       // Facebook content
       if (selectedPlatform === "facebook") {
-        const isFacebookConnected = facebookStatus?.connected === true;
         if (loadingFacebook) {
           return (
             <div style={{ textAlign: "center", padding: "60px 0" }}>
