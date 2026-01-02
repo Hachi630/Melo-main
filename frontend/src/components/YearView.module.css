@@ -1,0 +1,291 @@
+.yearViewContainer {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  background: #ffffff;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 20px;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", sans-serif;
+  min-width: 0;
+}
+
+.yearHeader {
+  margin-bottom: 24px;
+  text-align: left;
+  flex-shrink: 0;
+}
+
+.yearTitle {
+  font-size: 40px;
+  font-weight: 600;
+  color: #1d1d1f;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.monthsGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(3, auto);
+  gap: 20px;
+  width: 100%;
+  box-sizing: border-box;
+  flex-shrink: 0;
+}
+
+.monthCell {
+  background: #ffffff;
+  border: 1px solid #f0f0f0;
+  border-radius: 8px;
+  padding: 12px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  box-sizing: border-box;
+  min-height: 200px;
+}
+
+.monthCell:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transform: translateY(-2px);
+}
+
+.monthHeader {
+  margin-bottom: 8px;
+  flex-shrink: 0;
+}
+
+.monthName {
+  font-size: 14px;
+  font-weight: 600;
+  color: #ff3b30;
+  text-transform: capitalize;
+}
+
+.weekdayHeaders {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 1px;
+  margin-bottom: 4px;
+  flex-shrink: 0;
+}
+
+.weekdayHeader {
+  text-align: center;
+  font-size: 10px;
+  font-weight: 500;
+  color: #86868b;
+  padding: 2px 0;
+}
+
+.dateGrid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 2px;
+  width: 100%;
+  flex-shrink: 0;
+}
+
+.dateCell {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 2px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+  position: relative;
+  min-height: 24px;
+  aspect-ratio: 1;
+}
+
+.dateCell:hover {
+  background-color: #f5f5f7;
+}
+
+.dateCell.otherMonth {
+  opacity: 0.3;
+}
+
+.dateNumber {
+  font-size: 11px;
+  font-weight: 400;
+  color: #1d1d1f;
+  margin-bottom: 1px;
+}
+
+.dateCell.today .dateNumber {
+  position: relative;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background-color: #ff3b30;
+  color: white;
+  font-weight: 600;
+  z-index: 1;
+  font-size: 10px;
+}
+
+.eventIndicator {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2px;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2px;
+  width: 100%;
+}
+
+.eventDot {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.moreEvents {
+  font-size: 8px;
+  color: #86868b;
+  font-weight: 500;
+  margin-left: 2px;
+}
+
+/* Platform specific event dot colors */
+.event_instagram_post { background-color: #E1306C; }
+.event_instagram_story { background-color: #F77737; }
+.event_instagram_reels { background-color: #833AB4; }
+.event_tiktok { background-color: #000000; }
+.event_twitter { background-color: #1DA1F2; }
+.event_facebook { background-color: #1877F2; }
+.event_linkedin { background-color: #0077B5; }
+
+/* Responsive design */
+@media (max-width: 1600px) {
+  .monthsGrid {
+    gap: 16px;
+  }
+  
+  .monthCell {
+    padding: 10px;
+  }
+}
+
+@media (max-width: 1400px) {
+  .monthsGrid {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(4, auto);
+    gap: 16px;
+  }
+  
+  .yearViewContainer {
+    padding: 16px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .monthsGrid {
+    gap: 12px;
+  }
+  
+  .monthCell {
+    padding: 8px;
+  }
+  
+  .monthName {
+    font-size: 13px;
+  }
+  
+  .dateNumber {
+    font-size: 10px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .monthsGrid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(6, auto);
+    gap: 12px;
+  }
+  
+  .yearTitle {
+    font-size: 36px;
+  }
+  
+  .yearViewContainer {
+    padding: 16px;
+  }
+}
+
+@media (max-width: 768px) {
+  .monthsGrid {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    gap: 16px;
+  }
+  
+  .yearTitle {
+    font-size: 32px;
+  }
+  
+  .yearViewContainer {
+    padding: 12px;
+  }
+  
+  .yearHeader {
+    margin-bottom: 16px;
+  }
+  
+  .monthCell {
+    padding: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .yearTitle {
+    font-size: 28px;
+  }
+  
+  .yearViewContainer {
+    padding: 8px;
+  }
+  
+  .monthsGrid {
+    gap: 12px;
+  }
+  
+  .monthCell {
+    padding: 10px;
+  }
+  
+  .monthName {
+    font-size: 12px;
+  }
+  
+  .weekdayHeader {
+    font-size: 9px;
+    padding: 1px 0;
+  }
+  
+  .dateNumber {
+    font-size: 9px;
+  }
+  
+  .dateCell {
+    min-height: 20px;
+    padding: 1px;
+  }
+  
+  .dateCell.today .dateNumber {
+    width: 18px;
+    height: 18px;
+    font-size: 9px;
+  }
+}
+

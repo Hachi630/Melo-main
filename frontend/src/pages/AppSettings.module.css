@@ -1,0 +1,378 @@
+.settingsModal :global(.ant-modal-header) {
+  background-color: #ffffff !important;
+  border-bottom: none !important;
+}
+
+[data-theme="warm"] .settingsModal :global(.ant-modal-header) {
+  background-color: #ffefd5 !important;
+  border-bottom: none !important;
+}
+
+.settingsModal :global(.ant-modal-title) {
+  font-size: 20px !important;
+  font-weight: 600 !important;
+  color: var(--text-primary, #1e1e1e) !important;
+  font-family: var(--font-family, "Inter", sans-serif) !important;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  min-width: 0;
+  flex: 1;
+}
+
+.settingsModal :global(.ant-modal-header) {
+  display: flex;
+  align-items: center;
+  min-height: 56px;
+}
+
+.settingsModal :global(.ant-modal-header .ant-modal-title) {
+  flex: 1;
+  min-width: 0;
+  margin-right: 24px;
+}
+
+[data-theme="warm"] .settingsModal :global(.ant-modal-title) {
+  color: #908066 !important;
+  font-family: "ZCOOL KuaiLe", "Inter", sans-serif !important;
+}
+
+.settingsModal :global(.ant-modal-body) {
+  background-color: #ffffff !important;
+  padding: 24px !important;
+}
+
+[data-theme="warm"] .settingsModal :global(.ant-modal-body) {
+  background-color: #ffefd5 !important;
+}
+
+.settingsModal :global(.ant-modal-footer) {
+  background-color: #ffffff !important;
+  border-top: none !important;
+  padding: 16px 24px !important;
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 8px !important;
+  justify-content: flex-end !important;
+}
+
+.settingsModal :global(.ant-modal-footer .ant-btn) {
+  min-width: 100px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
+[data-theme="warm"] .settingsModal :global(.ant-modal-footer) {
+  background-color: #ffefd5 !important;
+  border-top: none !important;
+}
+
+.modalTitle {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 20px !important;
+  font-weight: 600 !important;
+  color: var(--text-primary, #1e1e1e) !important;
+  font-family: var(--font-family, "Inter", sans-serif) !important;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  min-width: 0;
+  flex: 1;
+}
+
+[data-theme="warm"] .modalTitle {
+  color: #908066 !important;
+  font-family: "ZCOOL KuaiLe", "Inter", sans-serif !important;
+}
+
+.modalContent {
+  max-height: 60vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+/* Hide scrollbar but keep scrolling functionality */
+.modalContent::-webkit-scrollbar {
+  display: none;
+}
+
+.modalContent {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.resetButton {
+  margin-right: auto;
+}
+
+.settingCard {
+  border-radius: 12px !important;
+  min-height: 200px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1) !important;
+  border: 1px solid var(--border-color, #e0e0e0) !important;
+  background-color: #ffffff !important;
+  height: 100%;
+}
+
+[data-theme="warm"] .settingCard {
+  border: 1px solid #e1dbc3 !important;
+  background-color: #ffefd5 !important;
+  box-shadow: 0 2px 8px rgba(225, 219, 195, 0.3) !important;
+}
+
+.settingCard :global(.ant-card-head) {
+  background-color: #ffffff !important;
+  border-bottom: 1px solid var(--border-color, #e0e0e0) !important;
+  padding: 16px 24px !important;
+}
+
+[data-theme="warm"] .settingCard :global(.ant-card-head) {
+  background-color: #ffefd5 !important;
+  border-bottom: 1px solid #e1dbc3 !important;
+}
+
+.settingCard :global(.ant-card-head-title) {
+  font-size: 20px !important;
+  font-weight: 600 !important;
+  color: var(--text-primary, #1e1e1e) !important;
+  font-family: var(--font-family, "Inter", sans-serif) !important;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+[data-theme="warm"] .settingCard :global(.ant-card-head-title) {
+  color: #908066 !important;
+  font-family: "ZCOOL KuaiLe", "Inter", sans-serif !important;
+}
+
+.settingCard :global(.ant-card-body) {
+  background-color: #ffffff !important;
+  padding: 24px !important;
+}
+
+[data-theme="warm"] .settingCard :global(.ant-card-body) {
+  background-color: #ffefd5 !important;
+}
+
+.settingItem {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.settingLabel {
+  font-size: 16px !important;
+  font-weight: 500 !important;
+  color: var(--text-primary, #1e1e1e) !important;
+  font-family: var(--font-family, "Inter", sans-serif) !important;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+[data-theme="warm"] .settingLabel {
+  color: #908066 !important;
+  font-family: "ZCOOL KuaiLe", "Inter", sans-serif !important;
+}
+
+.settingDescription {
+  font-size: 14px !important;
+  font-weight: 400 !important;
+  color: var(--text-secondary, #666666) !important;
+  font-family: var(--font-family, "Inter", sans-serif) !important;
+  line-height: 1.5;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  hyphens: auto;
+}
+
+[data-theme="warm"] .settingDescription {
+  color: #b1a285 !important;
+  font-family: "ZCOOL KuaiLe", "Inter", sans-serif !important;
+}
+
+.themeToggleWrapper {
+  display: flex;
+  align-items: center;
+  padding: 8px 0;
+  width: 100%;
+  min-width: 0;
+}
+
+.colorPickerWrapper {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  margin-top: 12px;
+}
+
+.colorInput {
+  width: 60px !important;
+  height: 40px !important;
+  padding: 4px !important;
+  border-radius: 8px !important;
+  cursor: pointer;
+}
+
+.colorTextInput {
+  flex: 1;
+}
+
+.colorGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.colorSwatch {
+  width: 48px;
+  height: 48px;
+  border-radius: 8px;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: all 0.2s;
+  padding: 0;
+  position: relative;
+}
+
+.colorSwatch:hover {
+  transform: scale(1.1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.colorSwatchActive {
+  border-color: var(--text-primary, #1e1e1e) !important;
+  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.1);
+}
+
+[data-theme="warm"] .colorSwatchActive {
+  border-color: #908066 !important;
+}
+
+.colorSwatchActive::after {
+  content: "✓";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.slider {
+  margin: 16px 0;
+}
+
+.slider :global(.ant-slider-track) {
+  background-color: var(--primary-color, #646cff) !important;
+}
+
+[data-theme="warm"] .slider :global(.ant-slider-track) {
+  background-color: #ae906e !important;
+}
+
+.slider :global(.ant-slider-handle) {
+  border-color: var(--primary-color, #646cff) !important;
+}
+
+[data-theme="warm"] .slider :global(.ant-slider-handle) {
+  border-color: #ae906e !important;
+}
+
+.select {
+  width: 100%;
+}
+
+.select :global(.ant-select-selector) {
+  background-color: #ffffff !important;
+  border: 1px solid rgba(0, 0, 0, 0.1) !important;
+  color: var(--text-primary, #1e1e1e) !important;
+  font-family: var(--font-family, "Inter", sans-serif) !important;
+}
+
+[data-theme="warm"] .select :global(.ant-select-selector) {
+  background-color: #ffefd5 !important;
+  border: 1px solid rgba(144, 128, 102, 0.2) !important;
+  color: #908066 !important;
+  font-family: "ZCOOL KuaiLe", "Inter", sans-serif !important;
+}
+
+.select :global(.ant-select-focused .ant-select-selector) {
+  border-color: var(--primary-color, #646cff) !important;
+}
+
+[data-theme="warm"] .select :global(.ant-select-focused .ant-select-selector) {
+  border-color: #ae906e !important;
+}
+
+/* Font preview in select options - ensure inline styles work */
+.select :global(.ant-select-item-option-content) {
+  font-family: inherit !important;
+}
+
+.select :global(.ant-select-item-option-content span) {
+  font-family: inherit !important;
+}
+
+.select :global(.ant-select-selection-item) {
+  font-family: inherit !important;
+}
+
+/* Global styles for select dropdown to ensure font preview works */
+:global(.ant-select-dropdown) :global(.ant-select-item-option-content) {
+  font-family: inherit !important;
+}
+
+:global(.ant-select-dropdown) :global(.ant-select-item-option-content span) {
+  font-family: inherit !important;
+}
+
+.settingsModal :global(.ant-modal-content) {
+  background-color: #ffffff !important;
+}
+
+[data-theme="warm"] .settingsModal :global(.ant-modal-content) {
+  background-color: #ffefd5 !important;
+}
+
+.settingsModal :global(.ant-modal) {
+  background-color: transparent !important;
+}
+
+/* Responsive styles - Mobile */
+@media (max-width: 767px) {
+  .settingsModal {
+    width: 95% !important;
+    max-width: 95% !important;
+  }
+
+  .modalContent {
+    max-height: 50vh;
+  }
+
+  .settingCard {
+    min-height: auto;
+  }
+
+  .settingsModal :global(.ant-modal-footer) {
+    flex-direction: column !important;
+  }
+
+  .settingsModal :global(.ant-modal-footer .ant-btn) {
+    width: 100% !important;
+  }
+
+  .themeToggleWrapper {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+}

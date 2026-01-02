@@ -1,0 +1,1001 @@
+/* CSS Variables for Theme System */
+:root {
+  /* Default theme variables (white/gray style) */
+  --bg-primary: #f5f5f5;
+  --bg-secondary: #ffffff;
+  --text-primary: #1e1e1e;
+  --text-secondary: #666666;
+  --border-color: #e0e0e0;
+  --primary-color: #646cff;
+  --primary-hover: #535bf2;
+  --font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  --bg-texture: none;
+}
+
+:root[data-theme="default"] {
+  --bg-primary: #f5f5f5;
+  --bg-secondary: #ffffff;
+  --text-primary: #1e1e1e;
+  --text-secondary: #666666;
+  --border-color: #e0e0e0;
+  --primary-color: #646cff;
+  --primary-hover: #535bf2;
+  --font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  --bg-texture: none;
+}
+
+:root[data-theme="warm"] {
+  --bg-primary: #faf9f4;
+  --bg-secondary: #ffefd5;
+  --bg-secondary-bright: #fff0d6;
+  --text-primary: #908066;
+  --text-secondary: #b1a285;
+  --border-color: #e1dbc3;
+  --primary-color: #ae906e;
+  --primary-hover: #b98e6b;
+  --font-family: "ZCOOL KuaiLe", Inter, system-ui, Avenir, Helvetica, Arial,
+    sans-serif;
+  --bg-texture: radial-gradient(
+    circle at 2px 2px,
+    rgba(225, 219, 195, 0.12) 1px,
+    transparent 0
+  );
+}
+
+:root {
+  font-family: var(--font-family);
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light;
+  color: var(--text-primary);
+  background-color: var(--bg-primary);
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  font-weight: 500;
+  color: var(--primary-color);
+  text-decoration: inherit;
+}
+a:hover {
+  color: var(--primary-hover);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background-color: var(--bg-primary);
+  background-image: var(--bg-texture);
+  background-size: 24px 24px;
+  font-family: var(--font-family) !important;
+}
+
+/* Apply warm theme font to all text elements globally */
+[data-theme="warm"] body,
+[data-theme="warm"] * {
+  font-family: var(
+    --font-family,
+    "ZCOOL KuaiLe",
+    Inter,
+    system-ui,
+    Avenir,
+    Helvetica,
+    Arial,
+    sans-serif
+  ) !important;
+}
+
+/* Specific elements for warm theme to ensure complete coverage */
+[data-theme="warm"] input,
+[data-theme="warm"] textarea,
+[data-theme="warm"] select,
+[data-theme="warm"] button,
+[data-theme="warm"] label,
+[data-theme="warm"] span,
+[data-theme="warm"] p,
+[data-theme="warm"] div:not([class*="ant-"]):not([id]),
+[data-theme="warm"] h1,
+[data-theme="warm"] h2,
+[data-theme="warm"] h3,
+[data-theme="warm"] h4,
+[data-theme="warm"] h5,
+[data-theme="warm"] h6,
+[data-theme="warm"] a,
+[data-theme="warm"] li,
+[data-theme="warm"] td,
+[data-theme="warm"] th {
+  font-family: var(
+    --font-family,
+    "ZCOOL KuaiLe",
+    Inter,
+    system-ui,
+    Avenir,
+    Helvetica,
+    Arial,
+    sans-serif
+  ) !important;
+}
+
+/* Ant Design components for warm theme */
+[data-theme="warm"] .ant-typography,
+[data-theme="warm"] .ant-input,
+[data-theme="warm"] .ant-input-affix-wrapper,
+[data-theme="warm"] textarea.ant-input,
+[data-theme="warm"] .ant-select-selector,
+[data-theme="warm"] .ant-btn,
+[data-theme="warm"] .ant-form-item-label > label,
+[data-theme="warm"] .ant-card-head-title,
+[data-theme="warm"] .ant-card-body {
+  font-family: var(
+    --font-family,
+    "ZCOOL KuaiLe",
+    Inter,
+    system-ui,
+    Avenir,
+    Helvetica,
+    Arial,
+    sans-serif
+  ) !important;
+}
+
+/* Header bar components for warm theme - use high specificity */
+[data-theme="warm"] .ant-layout-header,
+[data-theme="warm"] .ant-layout-header *,
+[data-theme="warm"] .ant-menu,
+[data-theme="warm"] .ant-menu *,
+[data-theme="warm"] .ant-menu-item,
+[data-theme="warm"] .ant-menu-item *,
+[data-theme="warm"] .ant-menu-item-selected,
+[data-theme="warm"] .ant-menu-item-selected *,
+[data-theme="warm"] .ant-menu-horizontal .ant-menu-item,
+[data-theme="warm"] .ant-menu-horizontal .ant-menu-item *,
+[data-theme="warm"] .ant-menu-vertical .ant-menu-item,
+[data-theme="warm"] .ant-menu-vertical .ant-menu-item *,
+[data-theme="warm"] .ant-menu-title-content,
+[data-theme="warm"] .ant-menu-title-content * {
+  font-family: var(
+    --font-family,
+    "ZCOOL KuaiLe",
+    Inter,
+    system-ui,
+    Avenir,
+    Helvetica,
+    Arial,
+    sans-serif
+  ) !important;
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+  background-color: var(--bg-primary);
+}
+
+/* Responsive global styles */
+@media (max-width: 767px) {
+  /* Ensure touch targets are large enough */
+  button,
+  a,
+  [role="button"] {
+    min-height: 44px;
+    min-width: 44px;
+  }
+
+  /* Optimize mobile font sizes */
+  body {
+    font-size: 14px;
+  }
+
+  h1 {
+    font-size: 2em;
+  }
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+button:hover {
+  border-color: #646cff;
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+/* Dark Mode Overrides (when react-darkreader is active) */
+/* These styles ensure proper colors for Header, Sidebar, and other components in dark mode */
+html[data-darkreader-mode] {
+  /* Header adjustments */
+  --darkreader-bg-header: #1f1f1f !important;
+  --darkreader-bg-sidebar: #1b1c1e !important;
+  --darkreader-border: #303030 !important;
+}
+
+/* Override white backgrounds for buttons and inputs in dark mode */
+html[data-darkreader-mode] .ant-btn:not(.ant-btn-primary):not(.ant-btn-link) {
+  background-color: #2b2b2b !important;
+  border-color: #303030 !important;
+  color: #e8edf5 !important;
+}
+
+html[data-darkreader-mode] .ant-btn-primary {
+  background-color: #6aa4ff !important;
+  border-color: #6aa4ff !important;
+}
+
+html[data-darkreader-mode] .ant-input,
+html[data-darkreader-mode] .ant-input-affix-wrapper,
+html[data-darkreader-mode] .ant-select-selector,
+html[data-darkreader-mode] .ant-picker,
+html[data-darkreader-mode] textarea.ant-input {
+  background-color: #2b2b2b !important;
+  border-color: #303030 !important;
+  color: #e8edf5 !important;
+}
+
+html[data-darkreader-mode] .ant-input::placeholder,
+html[data-darkreader-mode] .ant-input-affix-wrapper input::placeholder,
+html[data-darkreader-mode] textarea.ant-input::placeholder {
+  color: #b6c2d1 !important;
+}
+
+/* Card backgrounds */
+html[data-darkreader-mode] .ant-card {
+  background-color: #1f1f1f !important;
+  border-color: #303030 !important;
+}
+
+html[data-darkreader-mode] .ant-card-head {
+  background-color: #1f1f1f !important;
+  border-bottom-color: #303030 !important;
+}
+
+/* Modal backgrounds */
+html[data-darkreader-mode] .ant-modal-content,
+html[data-darkreader-mode] .ant-modal-header {
+  background-color: #1f1f1f !important;
+  border-color: #303030 !important;
+}
+
+html[data-darkreader-mode] .ant-modal-title {
+  color: #e8edf5 !important;
+}
+
+/* Drawer backgrounds */
+html[data-darkreader-mode] .ant-drawer-content,
+html[data-darkreader-mode] .ant-drawer-header {
+  background-color: #1f1f1f !important;
+  border-color: #303030 !important;
+}
+
+/* Menu backgrounds */
+html[data-darkreader-mode] .ant-menu,
+html[data-darkreader-mode] .ant-menu-submenu {
+  background-color: transparent !important;
+}
+
+html[data-darkreader-mode] .ant-menu-item,
+html[data-darkreader-mode] .ant-menu-submenu-title {
+  color: #e8edf5 !important;
+}
+
+html[data-darkreader-mode] .ant-menu-item:hover,
+html[data-darkreader-mode] .ant-menu-submenu-title:hover {
+  background-color: rgba(106, 164, 255, 0.1) !important;
+  color: #6aa4ff !important;
+}
+
+html[data-darkreader-mode] .ant-menu-item-selected {
+  background-color: rgba(106, 164, 255, 0.15) !important;
+  color: #6aa4ff !important;
+}
+
+/* Table backgrounds */
+html[data-darkreader-mode] .ant-table,
+html[data-darkreader-mode] .ant-table-thead > tr > th {
+  background-color: #1f1f1f !important;
+  border-color: #303030 !important;
+  color: #e8edf5 !important;
+}
+
+html[data-darkreader-mode] .ant-table-tbody > tr > td {
+  background-color: #1f1f1f !important;
+  border-color: #303030 !important;
+  color: #e8edf5 !important;
+}
+
+html[data-darkreader-mode] .ant-table-tbody > tr:hover > td {
+  background-color: #2b2b2b !important;
+}
+
+/* Select dropdown */
+html[data-darkreader-mode] .ant-select-dropdown {
+  background-color: #1f1f1f !important;
+  border-color: #303030 !important;
+}
+
+html[data-darkreader-mode] .ant-select-item {
+  color: #e8edf5 !important;
+}
+
+html[data-darkreader-mode] .ant-select-item-option-selected {
+  background-color: rgba(106, 164, 255, 0.15) !important;
+  color: #6aa4ff !important;
+}
+
+html[data-darkreader-mode] .ant-select-item:hover {
+  background-color: rgba(106, 164, 255, 0.1) !important;
+}
+
+/* Typography */
+html[data-darkreader-mode] .ant-typography,
+html[data-darkreader-mode] h1,
+html[data-darkreader-mode] h2,
+html[data-darkreader-mode] h3,
+html[data-darkreader-mode] h4,
+html[data-darkreader-mode] h5,
+html[data-darkreader-mode] h6 {
+  color: #e8edf5 !important;
+}
+
+html[data-darkreader-mode] .ant-typography-secondary {
+  color: #b6c2d1 !important;
+}
+
+/* Divider */
+html[data-darkreader-mode] .ant-divider {
+  border-color: #303030 !important;
+}
+
+/* Tag */
+html[data-darkreader-mode] .ant-tag {
+  background-color: #2b2b2b !important;
+  border-color: #303030 !important;
+  color: #e8edf5 !important;
+}
+
+/* Tag Success (Connected) - Green in dark mode */
+html[data-darkreader-mode] .ant-tag-success,
+html[data-darkreader-mode] .ant-tag.ant-tag-success,
+html[data-darkreader-mode] [class*="ant-tag-success"] {
+  background-color: #52c41a !important;
+  background: #52c41a !important;
+  border-color: #52c41a !important;
+  color: #ffffff !important;
+}
+
+html[data-darkreader-mode] .ant-tag-success .ant-tag-close-icon,
+html[data-darkreader-mode] .ant-tag.ant-tag-success .ant-tag-close-icon,
+html[data-darkreader-mode] [class*="ant-tag-success"] .ant-tag-close-icon {
+  color: #ffffff !important;
+}
+
+html[data-darkreader-mode] .ant-tag-success .ant-tag-close-icon:hover,
+html[data-darkreader-mode] .ant-tag.ant-tag-success .ant-tag-close-icon:hover,
+html[data-darkreader-mode]
+  [class*="ant-tag-success"]
+  .ant-tag-close-icon:hover {
+  color: #ffffff !important;
+  opacity: 0.8;
+}
+
+/* Badge */
+html[data-darkreader-mode] .ant-badge-status-dot {
+  background-color: #6aa4ff !important;
+}
+
+/* Tabs */
+html[data-darkreader-mode] .ant-tabs-tab {
+  color: #b6c2d1 !important;
+}
+
+html[data-darkreader-mode] .ant-tabs-tab-active {
+  color: #6aa4ff !important;
+}
+
+html[data-darkreader-mode] .ant-tabs-ink-bar {
+  background-color: #6aa4ff !important;
+}
+
+html[data-darkreader-mode] .ant-tabs-content-holder {
+  background-color: transparent !important;
+}
+
+/* Avatar */
+html[data-darkreader-mode] .ant-avatar {
+  background-color: #2b2b2b !important;
+  border-color: #303030 !important;
+}
+
+/* Tooltip */
+html[data-darkreader-mode] .ant-tooltip-inner {
+  background-color: #2b2b2b !important;
+  color: #e8edf5 !important;
+}
+
+/* Popover */
+html[data-darkreader-mode] .ant-popover-inner {
+  background-color: #1f1f1f !important;
+  border-color: #303030 !important;
+}
+
+html[data-darkreader-mode] .ant-popover-inner-content {
+  color: #e8edf5 !important;
+}
+
+/* Dropdown */
+html[data-darkreader-mode] .ant-dropdown {
+  background-color: #1f1f1f !important;
+}
+
+html[data-darkreader-mode] .ant-dropdown-menu {
+  background-color: #1f1f1f !important;
+  border-color: #303030 !important;
+}
+
+html[data-darkreader-mode] .ant-dropdown-menu-item {
+  color: #e8edf5 !important;
+}
+
+html[data-darkreader-mode] .ant-dropdown-menu-item:hover {
+  background-color: rgba(106, 164, 255, 0.1) !important;
+  color: #6aa4ff !important;
+}
+
+/* Message */
+html[data-darkreader-mode] .ant-message-notice-content {
+  background-color: #1f1f1f !important;
+  border-color: #303030 !important;
+  color: #e8edf5 !important;
+}
+
+/* Notification */
+html[data-darkreader-mode] .ant-notification-notice {
+  background-color: #1f1f1f !important;
+  border-color: #303030 !important;
+}
+
+html[data-darkreader-mode] .ant-notification-notice-message {
+  color: #e8edf5 !important;
+}
+
+/* Spin */
+html[data-darkreader-mode] .ant-spin-dot-item {
+  background-color: #6aa4ff !important;
+}
+
+/* Progress */
+html[data-darkreader-mode] .ant-progress-bg {
+  background-color: #6aa4ff !important;
+}
+
+/* Switch */
+html[data-darkreader-mode] .ant-switch-checked {
+  background-color: #6aa4ff !important;
+}
+
+/* Checkbox */
+html[data-darkreader-mode] .ant-checkbox-inner {
+  background-color: #2b2b2b !important;
+  border-color: #303030 !important;
+}
+
+html[data-darkreader-mode] .ant-checkbox-checked .ant-checkbox-inner {
+  background-color: #6aa4ff !important;
+  border-color: #6aa4ff !important;
+}
+
+/* Radio */
+html[data-darkreader-mode] .ant-radio-inner {
+  background-color: #2b2b2b !important;
+  border-color: #303030 !important;
+}
+
+html[data-darkreader-mode] .ant-radio-checked .ant-radio-inner {
+  border-color: #6aa4ff !important;
+}
+
+html[data-darkreader-mode] .ant-radio-checked .ant-radio-inner::after {
+  background-color: #6aa4ff !important;
+}
+
+/* Slider */
+html[data-darkreader-mode] .ant-slider-rail {
+  background-color: #2b2b2b !important;
+}
+
+html[data-darkreader-mode] .ant-slider-track {
+  background-color: #6aa4ff !important;
+}
+
+html[data-darkreader-mode] .ant-slider-handle {
+  border-color: #6aa4ff !important;
+}
+
+/* Upload */
+html[data-darkreader-mode] .ant-upload {
+  background-color: #2b2b2b !important;
+  border-color: #303030 !important;
+  color: #e8edf5 !important;
+}
+
+html[data-darkreader-mode] .ant-upload:hover {
+  border-color: #6aa4ff !important;
+}
+
+/* Segmented */
+html[data-darkreader-mode] .ant-segmented {
+  background-color: #2b2b2b !important;
+}
+
+html[data-darkreader-mode] .ant-segmented-item {
+  color: #b6c2d1 !important;
+}
+
+html[data-darkreader-mode] .ant-segmented-item-selected {
+  background-color: #6aa4ff !important;
+  color: #ffffff !important;
+}
+
+/* Empty */
+html[data-darkreader-mode] .ant-empty-description {
+  color: #b6c2d1 !important;
+}
+
+/* Skeleton */
+html[data-darkreader-mode] .ant-skeleton-content .ant-skeleton-title,
+html[data-darkreader-mode] .ant-skeleton-content .ant-skeleton-paragraph > li {
+  background-color: #2b2b2b !important;
+}
+
+/* Timeline */
+html[data-darkreader-mode] .ant-timeline-item-tail {
+  border-color: #303030 !important;
+}
+
+html[data-darkreader-mode] .ant-timeline-item-head {
+  background-color: #1f1f1f !important;
+  border-color: #303030 !important;
+}
+
+/* Anchor */
+html[data-darkreader-mode] .ant-anchor-link-title {
+  color: #b6c2d1 !important;
+}
+
+html[data-darkreader-mode] .ant-anchor-link-active > .ant-anchor-link-title {
+  color: #6aa4ff !important;
+}
+
+/* Breadcrumb */
+html[data-darkreader-mode] .ant-breadcrumb-link {
+  color: #b6c2d1 !important;
+}
+
+html[data-darkreader-mode] .ant-breadcrumb-link:hover {
+  color: #6aa4ff !important;
+}
+
+/* Pagination */
+html[data-darkreader-mode] .ant-pagination-item {
+  background-color: #2b2b2b !important;
+  border-color: #303030 !important;
+}
+
+html[data-darkreader-mode] .ant-pagination-item a {
+  color: #e8edf5 !important;
+}
+
+html[data-darkreader-mode] .ant-pagination-item-active {
+  background-color: #6aa4ff !important;
+  border-color: #6aa4ff !important;
+}
+
+html[data-darkreader-mode] .ant-pagination-item-active a {
+  color: #ffffff !important;
+}
+
+/* Rate */
+html[data-darkreader-mode] .ant-rate-star {
+  color: #303030 !important;
+}
+
+html[data-darkreader-mode] .ant-rate-star-full {
+  color: #6aa4ff !important;
+}
+
+/* Transfer */
+html[data-darkreader-mode] .ant-transfer-list {
+  background-color: #1f1f1f !important;
+  border-color: #303030 !important;
+}
+
+/* Tree */
+html[data-darkreader-mode] .ant-tree {
+  background-color: transparent !important;
+  color: #e8edf5 !important;
+}
+
+html[data-darkreader-mode] .ant-tree-node-selected {
+  background-color: rgba(106, 164, 255, 0.15) !important;
+}
+
+/* TreeSelect */
+html[data-darkreader-mode] .ant-select-tree {
+  background-color: #1f1f1f !important;
+  color: #e8edf5 !important;
+}
+
+/* Cascader */
+html[data-darkreader-mode] .ant-cascader-menu {
+  background-color: #1f1f1f !important;
+  border-color: #303030 !important;
+}
+
+html[data-darkreader-mode] .ant-cascader-menu-item {
+  color: #e8edf5 !important;
+}
+
+html[data-darkreader-mode] .ant-cascader-menu-item:hover {
+  background-color: rgba(106, 164, 255, 0.1) !important;
+}
+
+/* DatePicker */
+html[data-darkreader-mode] .ant-picker-panel {
+  background-color: #1f1f1f !important;
+  border-color: #303030 !important;
+}
+
+html[data-darkreader-mode] .ant-picker-cell {
+  color: #e8edf5 !important;
+}
+
+html[data-darkreader-mode] .ant-picker-cell:hover .ant-picker-cell-inner {
+  background-color: rgba(106, 164, 255, 0.1) !important;
+}
+
+html[data-darkreader-mode] .ant-picker-cell-selected .ant-picker-cell-inner {
+  background-color: #6aa4ff !important;
+}
+
+/* TimePicker */
+html[data-darkreader-mode] .ant-picker-time-panel-column {
+  background-color: #1f1f1f !important;
+}
+
+html[data-darkreader-mode] .ant-picker-time-panel-cell {
+  color: #e8edf5 !important;
+}
+
+html[data-darkreader-mode] .ant-picker-time-panel-cell:hover {
+  background-color: rgba(106, 164, 255, 0.1) !important;
+}
+
+html[data-darkreader-mode] .ant-picker-time-panel-cell-selected {
+  background-color: rgba(106, 164, 255, 0.15) !important;
+  color: #6aa4ff !important;
+}
+
+/* Calendar */
+html[data-darkreader-mode] .ant-picker-calendar {
+  background-color: #1f1f1f !important;
+}
+
+html[data-darkreader-mode] .ant-picker-calendar-date {
+  color: #e8edf5 !important;
+}
+
+html[data-darkreader-mode] .ant-picker-calendar-date:hover {
+  background-color: rgba(106, 164, 255, 0.1) !important;
+}
+
+html[data-darkreader-mode]
+  .ant-picker-calendar-selected-day
+  .ant-picker-calendar-date {
+  background-color: rgba(106, 164, 255, 0.15) !important;
+}
+
+/* Form */
+html[data-darkreader-mode] .ant-form-item-label > label {
+  color: #e8edf5 !important;
+}
+
+html[data-darkreader-mode] .ant-form-item-explain-error {
+  color: #ff4d4f !important;
+}
+
+/* Steps */
+html[data-darkreader-mode] .ant-steps-item-title {
+  color: #e8edf5 !important;
+}
+
+html[data-darkreader-mode] .ant-steps-item-process .ant-steps-item-title {
+  color: #6aa4ff !important;
+}
+
+html[data-darkreader-mode] .ant-steps-item-finish .ant-steps-item-title {
+  color: #6aa4ff !important;
+}
+
+/* Collapse */
+html[data-darkreader-mode] .ant-collapse {
+  background-color: #1f1f1f !important;
+  border-color: #303030 !important;
+}
+
+html[data-darkreader-mode] .ant-collapse-item {
+  border-color: #303030 !important;
+}
+
+html[data-darkreader-mode] .ant-collapse-header {
+  color: #e8edf5 !important;
+}
+
+html[data-darkreader-mode] .ant-collapse-content {
+  background-color: #1f1f1f !important;
+  color: #e8edf5 !important;
+}
+
+/* Descriptions */
+html[data-darkreader-mode] .ant-descriptions-item-label {
+  color: #b6c2d1 !important;
+}
+
+html[data-darkreader-mode] .ant-descriptions-item-content {
+  color: #e8edf5 !important;
+}
+
+/* List */
+html[data-darkreader-mode] .ant-list-item {
+  border-color: #303030 !important;
+}
+
+html[data-darkreader-mode] .ant-list-item-meta-title {
+  color: #e8edf5 !important;
+}
+
+html[data-darkreader-mode] .ant-list-item-meta-description {
+  color: #b6c2d1 !important;
+}
+
+/* Statistic */
+html[data-darkreader-mode] .ant-statistic-title {
+  color: #b6c2d1 !important;
+}
+
+html[data-darkreader-mode] .ant-statistic-content {
+  color: #e8edf5 !important;
+}
+
+/* Comment */
+html[data-darkreader-mode] .ant-comment-content-author-name {
+  color: #e8edf5 !important;
+}
+
+html[data-darkreader-mode] .ant-comment-content-detail {
+  color: #b6c2d1 !important;
+}
+
+/* Result */
+html[data-darkreader-mode] .ant-result-title {
+  color: #e8edf5 !important;
+}
+
+html[data-darkreader-mode] .ant-result-subtitle {
+  color: #b6c2d1 !important;
+}
+
+/* Alert */
+html[data-darkreader-mode] .ant-alert {
+  background-color: #2b2b2b !important;
+  border-color: #303030 !important;
+}
+
+html[data-darkreader-mode] .ant-alert-message {
+  color: #e8edf5 !important;
+}
+
+html[data-darkreader-mode] .ant-alert-description {
+  color: #b6c2d1 !important;
+}
+
+/* BackTop */
+html[data-darkreader-mode] .ant-back-top {
+  background-color: #2b2b2b !important;
+  color: #e8edf5 !important;
+}
+
+html[data-darkreader-mode] .ant-back-top:hover {
+  background-color: #303030 !important;
+}
+
+/* Affix */
+html[data-darkreader-mode] .ant-affix {
+  background-color: #1f1f1f !important;
+}
+
+/* Anchor */
+html[data-darkreader-mode] .ant-anchor {
+  background-color: transparent !important;
+}
+
+/* FloatButton */
+html[data-darkreader-mode] .ant-float-btn {
+  background-color: #2b2b2b !important;
+  border-color: #303030 !important;
+  color: #e8edf5 !important;
+}
+
+html[data-darkreader-mode] .ant-float-btn:hover {
+  background-color: #303030 !important;
+}
+
+/* Watermark */
+html[data-darkreader-mode] .ant-watermark {
+  color: rgba(184, 194, 209, 0.3) !important;
+}
+
+/* QRCode */
+html[data-darkreader-mode] .ant-qrcode {
+  background-color: #ffffff !important;
+  border-color: #303030 !important;
+}
+
+/* Tour */
+html[data-darkreader-mode] .ant-tour {
+  background-color: #1f1f1f !important;
+  border-color: #303030 !important;
+  color: #e8edf5 !important;
+}
+
+/* Image */
+html[data-darkreader-mode] .ant-image {
+  background-color: #2b2b2b !important;
+}
+
+/* Carousel */
+html[data-darkreader-mode] .ant-carousel .slick-dots li button {
+  background-color: #303030 !important;
+}
+
+html[data-darkreader-mode] .ant-carousel .slick-dots li.slick-active button {
+  background-color: #6aa4ff !important;
+}
+
+/* ConfigProvider theme adjustments for dark mode */
+html[data-darkreader-mode] {
+  color-scheme: dark;
+}
+
+/* Dark Mode Logo: Remove black background and blend with header */
+/* Note: The logo file is actually JPEG (not PNG), so we need CSS blend modes to remove black background */
+html[data-darkreader-mode] .logoImage,
+html[data-darkreader-mode] img.logoImage,
+html[data-darkreader-mode] .header .logoImage,
+html[data-darkreader-mode] .logoGroup .logoImage,
+html[data-darkreader-mode] .logoButton .logoImage,
+html[data-darkreader-mode] .logoButton img,
+html[data-darkreader-mode] .logoGroup img,
+html[data-darkreader-mode] img[src*="night"] {
+  /* Use lighten blend mode: only lighter pixels (white logo) visible,
+     darker pixels (black background) become transparent/invisible */
+  mix-blend-mode: lighten !important;
+  background: transparent !important;
+  background-color: transparent !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  border: none !important;
+  outline: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  /* Force hardware acceleration for smooth rendering */
+  transform: translateZ(0) !important;
+  will-change: mix-blend-mode !important;
+  /* Ensure proper stacking */
+  position: relative !important;
+  z-index: 1 !important;
+}
+
+/* Alternative: Try screen mode if lighten doesn't work well */
+html[data-darkreader-mode] .logoImage[src*="night"],
+html[data-darkreader-mode] img[src*="night"] {
+  mix-blend-mode: screen !important;
+}
+
+/* Ensure all parent containers are fully transparent and don't interfere */
+html[data-darkreader-mode] .logoButton,
+html[data-darkreader-mode] .logoGroup,
+html[data-darkreader-mode] .header .logoButton,
+html[data-darkreader-mode] .header .logoGroup,
+html[data-darkreader-mode] .header button.logoButton,
+html[data-darkreader-mode] button.logoButton {
+  background: transparent !important;
+  background-color: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  /* Critical: Don't create isolation context that breaks blend mode */
+  isolation: auto !important;
+}
+
+/* Remove any pseudo-element backgrounds */
+html[data-darkreader-mode] .logoButton::before,
+html[data-darkreader-mode] .logoButton::after,
+html[data-darkreader-mode] .logoGroup::before,
+html[data-darkreader-mode] .logoGroup::after {
+  display: none !important;
+  background: none !important;
+}
+
+/* Warm Theme Logo: Remove white background and blend with header */
+[data-theme="warm"] .logoImage,
+[data-theme="warm"] img.logoImage,
+[data-theme="warm"] .header .logoImage,
+[data-theme="warm"] .logoGroup .logoImage,
+[data-theme="warm"] .logoButton .logoImage,
+[data-theme="warm"] .logoButton img,
+[data-theme="warm"] .logoGroup img {
+  /* Use darken blend mode - makes white transparent, keeps black logo visible */
+  mix-blend-mode: darken !important;
+  background: transparent !important;
+  background-color: transparent !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  border: none !important;
+  outline: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  object-fit: contain !important;
+  /* Force hardware acceleration */
+  transform: translateZ(0) !important;
+  will-change: mix-blend-mode !important;
+  position: relative !important;
+  z-index: 1 !important;
+}
+
+/* Ensure warm theme parent containers are transparent */
+[data-theme="warm"] .logoButton,
+[data-theme="warm"] .logoGroup,
+[data-theme="warm"] .header .logoButton,
+[data-theme="warm"] .header .logoGroup,
+[data-theme="warm"] button.logoButton {
+  background: transparent !important;
+  background-color: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  isolation: auto !important;
+}
+
+/* Remove pseudo-element backgrounds in warm theme */
+[data-theme="warm"] .logoButton::before,
+[data-theme="warm"] .logoButton::after,
+[data-theme="warm"] .logoGroup::before,
+[data-theme="warm"] .logoGroup::after {
+  display: none !important;
+  background: none !important;
+}

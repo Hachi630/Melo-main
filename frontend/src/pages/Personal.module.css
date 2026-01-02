@@ -1,0 +1,355 @@
+.personalModal :global(.ant-modal-header) {
+  background-color: #ffffff !important;
+  border-bottom: none !important;
+}
+
+[data-theme="warm"] .personalModal :global(.ant-modal-header) {
+  background-color: #FFEFD5 !important;
+  border-bottom: none !important;
+}
+
+.personalModal :global(.ant-modal-title) {
+  font-size: 20px !important;
+  font-weight: 600 !important;
+  color: var(--text-primary, #1e1e1e) !important;
+  font-family: var(--font-family, 'Inter', sans-serif) !important;
+}
+
+[data-theme="warm"] .personalModal :global(.ant-modal-title) {
+  color: #908066 !important;
+  font-family: 'ZCOOL KuaiLe', 'Inter', sans-serif !important;
+}
+
+.personalModal :global(.ant-modal-body) {
+  background-color: #ffffff !important;
+  padding: 24px !important;
+}
+
+[data-theme="warm"] .personalModal :global(.ant-modal-body) {
+  background-color: #FFEFD5 !important;
+}
+
+.personalModal :global(.ant-modal-content) {
+  background-color: #ffffff !important;
+}
+
+[data-theme="warm"] .personalModal :global(.ant-modal-content) {
+  background-color: #FFEFD5 !important;
+}
+
+.modalTitle {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 20px !important;
+  font-weight: 600 !important;
+  color: var(--text-primary, #1e1e1e) !important;
+  font-family: var(--font-family, 'Inter', sans-serif) !important;
+}
+
+[data-theme="warm"] .modalTitle {
+  color: #908066 !important;
+  font-family: 'ZCOOL KuaiLe', 'Inter', sans-serif !important;
+}
+
+.modalContent {
+  max-height: 70vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+/* Hide scrollbar but keep scrolling functionality */
+.modalContent::-webkit-scrollbar {
+  display: none;
+}
+
+.modalContent {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.headerSection {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 64px;
+  gap: 24px;
+}
+
+.userInfo {
+  display: flex;
+  align-items: flex-start;
+  gap: 24px;
+  flex: 1;
+}
+
+.avatarSection {
+  flex-shrink: 0;
+}
+
+.avatar {
+  width: 106px;
+  height: 106px;
+  font-size: 48px;
+}
+
+.avatarImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.nameSection {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.userName {
+  margin: 0 !important;
+  font-size: 48px !important;
+  font-weight: 700 !important;
+  line-height: 1.2 !important;
+  color: var(--text-primary, #1e1e1e) !important;
+  font-family: var(--font-family, 'Inter', sans-serif) !important;
+}
+
+[data-theme="warm"] .userName {
+  color: #908066 !important;
+  font-family: 'ZCOOL KuaiLe', 'Inter', sans-serif !important;
+}
+
+.nameInput {
+  font-size: 48px !important;
+  font-weight: 700 !important;
+  padding: 0 !important;
+  border: none !important;
+  border-bottom: 2px solid #d9d9d9 !important;
+  border-radius: 0 !important;
+}
+
+.nameInput:focus {
+  border-bottom-color: var(--primary-color, #646cff) !important;
+  box-shadow: none !important;
+}
+
+[data-theme="warm"] .nameInput:focus {
+  border-bottom-color: #AE906E !important;
+}
+
+.brandName {
+  font-size: 32px !important;
+  font-weight: 400 !important;
+  line-height: 1.2 !important;
+  color: var(--text-secondary, #666666) !important;
+  font-family: var(--font-family, 'Inter', sans-serif) !important;
+}
+
+[data-theme="warm"] .brandName {
+  color: #B1A285 !important;
+  font-family: 'ZCOOL KuaiLe', 'Inter', sans-serif !important;
+}
+
+.brandInput {
+  font-size: 32px !important;
+  font-weight: 400 !important;
+  padding: 0 !important;
+  border: none !important;
+  border-bottom: 2px solid #d9d9d9 !important;
+  border-radius: 0 !important;
+}
+
+.brandInput:focus {
+  border-bottom-color: var(--primary-color, #646cff) !important;
+  box-shadow: none !important;
+}
+
+[data-theme="warm"] .brandInput:focus {
+  border-bottom-color: #AE906E !important;
+}
+
+.editButtonSection {
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 8px;
+}
+
+.cardRow {
+  margin-bottom: 0;
+}
+
+.headerSection {
+  margin-bottom: 32px;
+}
+
+/* Responsive styles - Tablet */
+@media (max-width: 991px) and (min-width: 768px) {
+  .headerSection {
+    margin-bottom: 24px;
+  }
+
+  .userName {
+    font-size: 36px !important;
+  }
+
+  .brandName {
+    font-size: 24px !important;
+  }
+}
+
+/* Responsive styles - Mobile */
+@media (max-width: 767px) {
+  .personalModal {
+    width: 95% !important;
+    max-width: 95% !important;
+  }
+
+  .modalContent {
+    max-height: 60vh;
+  }
+
+  .headerSection {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 24px;
+    gap: 16px;
+  }
+
+  .userInfo {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  .nameSection {
+    text-align: center;
+    width: 100%;
+  }
+
+  .userName {
+    font-size: 32px !important;
+  }
+
+  .brandName {
+    font-size: 24px !important;
+  }
+
+  .avatar {
+    width: 80px;
+    height: 80px;
+    font-size: 36px;
+  }
+}
+
+.infoCard {
+  border-radius: 8px;
+  min-height: 200px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03);
+  border: 1px solid var(--border-color, #e0e0e0) !important;
+  background-color: var(--bg-secondary, #ffffff) !important;
+  height: 100%;
+}
+
+[data-theme="warm"] .infoCard {
+  border: 1px solid #E1DBC3 !important;
+  background-color: #FFEFD5 !important;
+  box-shadow: 0 2px 8px rgba(225, 219, 195, 0.3);
+}
+
+.infoCard :global(.ant-card-body) {
+  background-color: var(--bg-secondary, #ffffff) !important;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  height: 100%;
+}
+
+[data-theme="warm"] .infoCard :global(.ant-card-body) {
+  background-color: #FFEFD5 !important;
+}
+
+.cardTitle {
+  margin: 0 !important;
+  font-size: 24px !important;
+  font-weight: 600 !important;
+  line-height: 1.2 !important;
+  color: var(--text-primary, #1e1e1e) !important;
+  font-family: var(--font-family, 'Inter', sans-serif) !important;
+}
+
+[data-theme="warm"] .cardTitle {
+  color: #908066 !important;
+  font-family: 'ZCOOL KuaiLe', 'Inter', sans-serif !important;
+}
+
+.fieldValue {
+  font-size: 24px !important;
+  font-weight: 600 !important;
+  line-height: 1.2 !important;
+  color: var(--text-secondary, #666666) !important;
+  word-break: break-word;
+  font-family: var(--font-family, 'Inter', sans-serif) !important;
+}
+
+[data-theme="warm"] .fieldValue {
+  color: #B1A285 !important;
+  font-family: 'ZCOOL KuaiLe', 'Inter', sans-serif !important;
+}
+
+/* Ensure all Input and Select have white background */
+:global(.ant-input),
+:global(.ant-input-affix-wrapper),
+:global(.ant-select-selector),
+:global(.ant-picker) {
+  background-color: var(--bg-secondary, #ffffff) !important;
+  border: 1px solid var(--border-color, #e0e0e0) !important;
+  color: var(--text-primary, #1e1e1e) !important;
+  font-family: var(--font-family, 'Inter', sans-serif) !important;
+}
+
+[data-theme="warm"] :global(.ant-input),
+[data-theme="warm"] :global(.ant-input-affix-wrapper),
+[data-theme="warm"] :global(.ant-select-selector),
+[data-theme="warm"] :global(.ant-picker) {
+  background-color: #FAF6EA !important;
+  border: 1px solid #E1DBC3 !important;
+  color: #908066 !important;
+  font-family: 'ZCOOL KuaiLe', 'Inter', sans-serif !important;
+}
+
+:global(.ant-input):focus,
+:global(.ant-input-affix-wrapper):focus,
+:global(.ant-select-focused .ant-select-selector),
+:global(.ant-picker-focused) {
+  background-color: var(--bg-secondary, #ffffff) !important;
+  border-color: var(--primary-color, #646cff) !important;
+}
+
+[data-theme="warm"] :global(.ant-input):focus,
+[data-theme="warm"] :global(.ant-input-affix-wrapper):focus,
+[data-theme="warm"] :global(.ant-select-focused .ant-select-selector),
+[data-theme="warm"] :global(.ant-picker-focused) {
+  background-color: #FAF6EA !important;
+  border-color: #AE906E !important;
+}
+
+/* Upload component styles */
+:global(.ant-upload-select-picture-card) {
+  width: 106px !important;
+  height: 106px !important;
+  border-radius: 50% !important;
+  overflow: hidden;
+}
+
+:global(.ant-upload-select-picture-card .ant-upload) {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+
+

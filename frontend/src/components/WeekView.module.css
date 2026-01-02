@@ -1,0 +1,266 @@
+.weekViewContainer {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: #ffffff;
+  overflow: hidden;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", sans-serif;
+}
+
+/* Header with days */
+.headerRow {
+  display: flex;
+  border-bottom: 1px solid #e5e5e5;
+  padding-left: 60px; /* Space for time axis */
+  background: #ffffff;
+  z-index: 10;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.dayColumnHeader {
+  flex: 1;
+  text-align: center;
+  padding: 12px 0;
+  border-right: 1px solid #f0f0f0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.dayColumnHeader:last-child {
+  border-right: none;
+}
+
+.dayName {
+  font-size: 11px;
+  font-weight: 500;
+  color: #86868b;
+  text-transform: uppercase;
+}
+
+.dayNumber {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  font-weight: 400;
+  color: #1d1d1f;
+  transition: all 0.2s ease;
+}
+
+.todayColumn .dayName {
+  color: #ff3b30;
+  font-weight: 600;
+}
+
+.todayColumn .dayNumber {
+  background-color: #ff3b30;
+  color: white;
+  font-weight: 600;
+}
+
+/* All-day section */
+.allDaySection {
+  display: flex;
+  padding-left: 60px;
+  border-bottom: 1px solid #e5e5e5;
+  min-height: 30px;
+  flex-shrink: 0;
+}
+
+.allDayLabel {
+  position: absolute;
+  left: 0;
+  width: 60px;
+  font-size: 10px;
+  color: #86868b;
+  padding: 8px;
+  text-align: right;
+  border-right: 1px solid #e5e5e5;
+}
+
+.allDayGrid {
+  display: flex;
+  flex: 1;
+  width: 100%;
+}
+
+.allDayCell {
+  flex: 1;
+  border-right: 1px solid #f0f0f0;
+  padding: 2px;
+  min-height: 28px;
+}
+
+/* Main scrollable area */
+.scrollArea {
+  flex: 1;
+  overflow-y: auto;
+  position: relative;
+  display: flex;
+}
+
+/* Time axis */
+.timeAxis {
+  width: 60px;
+  flex-shrink: 0;
+  border-right: 1px solid #e5e5e5;
+  background: #ffffff;
+  position: sticky;
+  left: 0;
+  z-index: 5;
+}
+
+.timeSlot {
+  height: 60px; /* 1 hour height */
+  position: relative;
+  text-align: right;
+  padding-right: 8px;
+}
+
+.timeLabel {
+  position: absolute;
+  top: -6px;
+  right: 8px;
+  font-size: 11px;
+  color: #86868b;
+  font-weight: 500;
+}
+
+/* Main grid */
+.gridContainer {
+  flex: 1;
+  display: flex;
+  position: relative;
+}
+
+.gridColumn {
+  flex: 1;
+  border-right: 1px solid #f0f0f0;
+  position: relative;
+  min-width: 100px;
+}
+
+.gridColumn:last-child {
+  border-right: none;
+}
+
+/* Horizontal grid lines */
+.gridLine {
+  position: absolute;
+  left: 0;
+  right: 0;
+  border-bottom: 1px solid #f0f0f0;
+  height: 1px;
+  width: 100%;
+  pointer-events: none;
+}
+
+/* Current time indicator */
+.currentTimeIndicator {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background-color: #ff3b30;
+  z-index: 20;
+  pointer-events: none;
+}
+
+.currentTimeLabel {
+  position: absolute;
+  left: -55px;
+  top: -5px;
+  color: #ff3b30;
+  font-size: 10px;
+  font-weight: 600;
+  background: #fff;
+  padding: 0 4px;
+}
+
+.currentTimeDot {
+  position: absolute;
+  left: -5px;
+  top: -4px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #ff3b30;
+}
+
+/* Event styles */
+.eventCard {
+  position: absolute;
+  left: 2px;
+  right: 4px;
+  background: #ebf5ff;
+  border-left: 3px solid #0071e3;
+  border-radius: 4px;
+  padding: 4px 6px;
+  font-size: 12px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+  z-index: 10;
+}
+
+.eventCard:hover {
+  transform: scale(1.02);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  z-index: 15;
+}
+
+.eventTitle {
+  font-weight: 600;
+  color: #1d1d1f;
+  margin-bottom: 2px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.eventTime {
+  font-size: 10px;
+  color: #515154;
+}
+
+/* Platform specific colors */
+.event_instagram_post { background: #ffeef0; border-left-color: #E1306C; }
+.event_instagram_story { background: #fff0e6; border-left-color: #F77737; }
+.event_instagram_reels { background: #f0e6ff; border-left-color: #833AB4; }
+.event_tiktok { background: #f0f0f0; border-left-color: #000000; }
+.event_twitter { background: #f0f8ff; border-left-color: #1DA1F2; }
+.event_facebook { background: #eef4ff; border-left-color: #1877F2; }
+.event_linkedin { background: #eef6fb; border-left-color: #0077B5; }
+
+/* Add button on hover */
+.addSlotButton {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 30px; /* 30 min slot */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.1s;
+  z-index: 5;
+  cursor: pointer;
+}
+
+.gridColumn:hover .addSlotButton:hover {
+  opacity: 1;
+  background-color: rgba(0, 113, 227, 0.05);
+}
+
+.addIcon {
+  color: #0071e3;
+  font-size: 16px;
+}
+

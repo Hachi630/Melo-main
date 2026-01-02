@@ -1,0 +1,296 @@
+.authModal :global(.ant-modal-content) {
+  border-radius: 12px;
+  padding: 0;
+  overflow: hidden;
+  box-shadow: 0 4px 32px rgba(0, 0, 0, 0.1);
+}
+
+.authModal :global(.ant-modal-close) {
+  top: 16px;
+  right: 16px;
+}
+
+.container {
+  padding: 40px 40px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title {
+  font-family: 'Söhne', 'Inter', sans-serif !important;
+  font-weight: 700 !important;
+  margin-bottom: 16px !important;
+  margin-top: 0 !important;
+}
+
+.subtitle {
+  font-family: 'Inter', sans-serif;
+  font-size: 15px;
+  color: #666;
+  line-height: 1.5;
+  margin-bottom: 24px;
+  display: block;
+}
+
+.socialButtons {
+  width: 100%;
+}
+
+.socialBtn {
+  height: 48px !important;
+  border-radius: 24px !important;
+  font-size: 15px !important;
+  font-weight: 500 !important;
+  border: 1px solid #e3e3e3 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  padding-left: 20px !important;
+  position: relative;
+}
+
+.socialBtn :global(.ant-btn-icon) {
+  margin-right: 12px;
+  font-size: 20px;
+}
+
+/* Center text in button relative to icon on the left */
+.socialBtn span:not(:global(.ant-btn-icon)) {
+  flex: 1;
+  text-align: left;
+  padding-left: 8px; /* Fine-tune spacing */
+}
+
+.divider {
+  margin: 24px 0 !important;
+  color: #666 !important;
+  font-size: 12px !important;
+  font-weight: 500 !important;
+}
+
+.emailSection {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.emailInput {
+  height: 52px;
+  border-radius: 8px;
+  border: 1px solid #e3e3e3;
+}
+
+.continueBtn {
+  height: 48px !important;
+  border-radius: 24px !important;
+  background-color: #1a1a1a !important;
+  border-color: #1a1a1a !important;
+  font-weight: 500 !important;
+  font-size: 16px !important;
+  color: #ffffff !important;
+}
+
+.continueBtn:hover {
+  background-color: #333 !important;
+  border-color: #333 !important;
+  color: #ffffff !important;
+}
+
+.continueBtn:disabled {
+  background-color: #d9d9d9 !important;
+  border-color: #d9d9d9 !important;
+  color: #ffffff !important;
+  opacity: 0.6;
+}
+
+/* Signup page styles */
+.signupContainer {
+  min-height: 500px;
+  display: flex;
+  flex-direction: column;
+}
+
+.logoContainer {
+  padding: 24px 40px 0;
+  text-align: left;
+}
+
+.backButton {
+  padding: 0 !important;
+  height: auto !important;
+  font-size: 20px !important;
+  color: #1a1a1a !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.backButton:hover {
+  color: #666 !important;
+  background-color: transparent !important;
+}
+
+.signupContent {
+  flex: 1;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.signupTitle {
+  font-family: 'Inter', sans-serif !important;
+  font-weight: 700 !important;
+  font-size: 32px !important;
+  margin-bottom: 8px !important;
+  margin-top: 0 !important;
+  text-align: center;
+}
+
+.signupSubtitle {
+  font-family: 'Inter', sans-serif;
+  font-size: 15px;
+  color: #666;
+  line-height: 1.5;
+  margin-bottom: 32px;
+  display: block;
+  text-align: center;
+}
+
+.signupForm {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.emailFieldWrapper,
+.passwordFieldWrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.fieldLabel {
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  color: #1a1a1a;
+  text-align: left;
+}
+
+.emailFieldWithEdit {
+  display: flex;
+  gap: 8px;
+  align-items: flex-start;
+}
+
+.emailInputReadonly {
+  flex: 1;
+  height: 52px;
+  border-radius: 8px;
+  border: 1px solid #e3e3e3;
+  background-color: #f5f5f5 !important;
+}
+
+.emailInputReadonly:global(.ant-input) {
+  background-color: #f5f5f5 !important;
+  cursor: not-allowed;
+}
+
+.editButton {
+  padding: 0 !important;
+  height: 52px !important;
+  display: flex !important;
+  align-items: center !important;
+  color: #1890ff !important;
+  font-size: 14px !important;
+  font-weight: 500 !important;
+}
+
+.passwordInput {
+  height: 52px;
+  border-radius: 8px;
+  border: 1px solid #e3e3e3;
+}
+
+.passwordInput :global(.ant-input) {
+  background-color: #ffffff !important;
+}
+
+.eyeButton {
+  border: none !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  color: #666 !important;
+}
+
+.eyeButton:hover {
+  color: #1a1a1a !important;
+}
+
+.footerLinks {
+  margin-top: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.footerLink {
+  padding: 0 !important;
+  height: auto !important;
+  color: #666 !important;
+  font-size: 13px !important;
+}
+
+.footerLink:hover {
+  color: #1a1a1a !important;
+}
+
+.footerDivider {
+  color: #d9d9d9;
+  font-size: 13px;
+}
+
+/* Responsive styles - Mobile */
+@media (max-width: 767px) {
+  .container,
+  .signupContent {
+    padding: 24px 16px;
+  }
+
+  .title,
+  .signupTitle {
+    font-size: 28px !important;
+  }
+
+  .subtitle,
+  .signupSubtitle {
+    font-size: 14px;
+  }
+
+  .socialBtn,
+  .emailInput,
+  .continueBtn {
+    height: 44px !important;
+    font-size: 14px !important;
+  }
+
+  .passwordInput {
+    height: 44px;
+  }
+
+  .emailInputReadonly {
+    height: 44px;
+  }
+
+  .editButton {
+    height: 44px !important;
+  }
+}
+
