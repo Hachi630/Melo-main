@@ -1,15 +1,15 @@
 import { Router, Request, Response } from "express";
 import { TwitterApi } from "twitter-api-v2";
-import TwitterToken from "../models/TwitterToken";
-import TwitterRequestToken from "../models/TwitterRequestToken";
-import { protect } from "../middleware/auth";
+import TwitterToken from "../models/TwitterToken.js";
+import TwitterRequestToken from "../models/TwitterRequestToken.js";
+import { protect } from "../middleware/auth.js";
 import multer from "multer";
 import path from "path";
 import { fileURLToPath } from "url";
 import { dirname } from "path";
 import fs from "fs";
-import { AuthRequest } from "../types";
-import { twitterService } from "../services/twitterService";
+import { AuthRequest } from "../types/index.js";
+import { twitterService } from "../services/twitterService.js";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);

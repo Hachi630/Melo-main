@@ -1,8 +1,8 @@
 import express, { Request, Response } from "express";
 import axios from "axios";
-import { protect } from "../middleware/auth";
-import { AuthRequest } from "../types";
-import User from "../models/User";
+import { protect } from "../middleware/auth.js";
+import { AuthRequest } from "../types/index.js";
+import User from "../models/User.js";
 import {
   getInstagramAuthUrl,
   exchangeCodeForToken,
@@ -10,7 +10,7 @@ import {
   getInstagramAccountIdForPage,
   getFacebookPagesWithInstagram,
   shareToInstagram,
-} from "../services/instagramService";
+} from "../services/instagramService.js";
 import crypto from "crypto";
 
 const router = express.Router();

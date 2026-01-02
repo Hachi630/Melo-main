@@ -4,17 +4,17 @@ import dotenv from 'dotenv'
 import path from 'path'
 import { fileURLToPath } from 'url'
 import { dirname } from 'path'
-import { connectDB } from './config/database'
-import authRoutes from './routes/auth'
-import chatRoutes from './routes/chat'
-import calendarRoutes from './routes/calendar'
-import campaignRoutes from './routes/campaign'
-import uploadRoutes from './routes/upload'
-import facebookRoutes from './routes/facebook'
-import instagramRoutes from './routes/instagram'
-import { errorHandler } from './middleware/errorHandler'
-import linkedinRoutes from "./routes/linkedin";
-import twitterRoutes from "./routes/twitter";
+import { connectDB } from './config/database.js'
+import authRoutes from './routes/auth.js'
+import chatRoutes from './routes/chat.js'
+import calendarRoutes from './routes/calendar.js'
+import campaignRoutes from './routes/campaign.js'
+import uploadRoutes from './routes/upload.js'
+import facebookRoutes from './routes/facebook.js'
+import instagramRoutes from './routes/instagram.js'
+import { errorHandler } from './middleware/errorHandler.js'
+import linkedinRoutes from "./routes/linkedin.js";
+import twitterRoutes from "./routes/twitter.js";
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = dirname(__filename)

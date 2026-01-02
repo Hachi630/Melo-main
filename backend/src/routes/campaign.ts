@@ -1,7 +1,7 @@
 import express, { Request, Response } from 'express'
-import { protect } from '../middleware/auth'
-import { AuthRequest } from '../types'
-import Campaign from '../models/Campaign'
+import { protect } from '../middleware/auth.js'
+import { AuthRequest } from '../types/index.js'
+import Campaign from '../models/Campaign.js'
 
 const router = express.Router()
 

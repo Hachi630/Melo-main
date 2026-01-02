@@ -1,7 +1,7 @@
 import { Response, NextFunction } from 'express'
-import { verifyToken } from '../utils/jwt'
-import User from '../models/User'
-import { AuthRequest } from '../types'
+import { verifyToken } from '../utils/jwt.js'
+import User from '../models/User.js'
+import { AuthRequest } from '../types/index.js'
 
 export const requireAuth = async (req: AuthRequest, res: Response, next: NextFunction) => {
   let token

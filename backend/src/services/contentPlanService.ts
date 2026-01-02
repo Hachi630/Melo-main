@@ -1,5 +1,5 @@
 import { GoogleGenAI } from '@google/genai'
-import { UserContext } from './geminiService'
+import { UserContext } from './geminiService.js'
 
 // Initialize Gemini client
 const ai = new GoogleGenAI({})

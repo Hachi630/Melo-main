@@ -1,15 +1,15 @@
 import express, { Request, Response } from "express";
-import { protect } from "../middleware/auth";
-import { AuthRequest } from "../types";
-import { geminiService, ChatMessage } from "../services/geminiService";
-import Conversation from "../models/Conversation";
-import ProjectFolder from "../models/ProjectFolder";
-import { generateImage } from "../services/imageGenerationService";
-import { saveImage } from "../utils/imageStorage";
-import { generateContentPlan } from "../services/contentPlanService";
-import CalendarItem from "../models/CalendarItem";
-import { readImageAsBase64 } from "../utils/imageReader";
-import { extractTextFromFile } from "../utils/fileContentExtractor";
+import { protect } from "../middleware/auth.js";
+import { AuthRequest } from "../types/index.js";
+import { geminiService, ChatMessage } from "../services/geminiService.js";
+import Conversation from "../models/Conversation.js";
+import ProjectFolder from "../models/ProjectFolder.js";
+import { generateImage } from "../services/imageGenerationService.js";
+import { saveImage } from "../utils/imageStorage.js";
+import { generateContentPlan } from "../services/contentPlanService.js";
+import CalendarItem from "../models/CalendarItem.js";
+import { readImageAsBase64 } from "../utils/imageReader.js";
+import { extractTextFromFile } from "../utils/fileContentExtractor.js";
 
 const router = express.Router();
 

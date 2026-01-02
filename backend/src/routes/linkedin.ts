@@ -2,9 +2,9 @@ import { Router } from "express";
 import qs from "qs";
 import axios from "axios";
 
-import LinkedInToken from "../models/LinkedInToken";
-import { generateToken } from "../utils/jwt";
-import { requireAuth } from "../middleware/auth";
+import LinkedInToken from "../models/LinkedInToken.js";
+import { generateToken } from "../utils/jwt.js";
+import { requireAuth } from "../middleware/auth.js";
 import {
   getLinkedInMemberId,
   getTotalConnections,
@@ -39,7 +39,7 @@ import {
   uploadVideoToLinkedIn,
   createLinkedInPostWithVideo,
   createLinkedInPostWithLink,
-} from "../services/linkedinService";
+} from "../services/linkedinService.js";
 
 const router = Router();
 

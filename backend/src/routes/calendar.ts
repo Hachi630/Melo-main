@@ -1,9 +1,9 @@
 import express, { Request, Response } from 'express'
-import { protect } from '../middleware/auth'
-import { AuthRequest } from '../types'
-import CalendarItem from '../models/CalendarItem'
-import { twitterService } from '../services/twitterService'
-import TwitterToken from '../models/TwitterToken'
+import { protect } from '../middleware/auth.js'
+import { AuthRequest } from '../types/index.js'
+import CalendarItem from '../models/CalendarItem.js'
+import { twitterService } from '../services/twitterService.js'
+import TwitterToken from '../models/TwitterToken.js'
 
 const router = express.Router()
 

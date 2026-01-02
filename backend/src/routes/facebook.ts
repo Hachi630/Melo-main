@@ -1,15 +1,15 @@
 import express, { Request, Response } from "express";
 import axios from "axios";
-import { protect } from "../middleware/auth";
-import { AuthRequest } from "../types";
-import User from "../models/User";
+import { protect } from "../middleware/auth.js";
+import { AuthRequest } from "../types/index.js";
+import User from "../models/User.js";
 import {
   getFacebookAuthUrl,
   exchangeCodeForToken,
   getLongLivedToken,
   getFacebookPages,
   shareToFacebook,
-} from "../services/facebookService";
+} from "../services/facebookService.js";
 import crypto from "crypto";
 import multer from "multer";
 import path from "path";
