@@ -324,7 +324,7 @@ export default function CalendarPage({
     const remainingCount = items.length - maxDisplay;
 
     return (
-      <DroppableDateCell date={date} isToday={isToday} onDateClick={() => setSelectedValue(date)}>
+      <DroppableDateCell date={date} onDateClick={() => setSelectedValue(date)}>
         <div className={styles.monthDateCell}>
           <div className={styles.monthDateNumber}>
             {isToday ? (

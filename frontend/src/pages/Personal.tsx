@@ -227,7 +227,7 @@ export default function Personal({
     }
   }
 
-  const beforeUpload = (file: File) => {
+  const beforeUpload = (_file: File) => {
     // Return false to prevent auto upload, we'll handle it manually in onChange
     return false
   }
