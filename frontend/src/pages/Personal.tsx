@@ -50,8 +50,8 @@ export default function Personal({
   onClose = () => {},
   user: propUser,
   onLoginSuccess,
-  isLoggedIn,
-  onLogout,
+  isLoggedIn: _isLoggedIn,
+  onLogout: _onLogout,
 }: PersonalProps) {
   const [isEditing, setIsEditing] = useState(false)
   const [loading, setLoading] = useState(false)
@@ -176,21 +176,21 @@ export default function Personal({
 
   const handleAvatarChange: UploadProps['onChange'] = (info) => {
     // Get file from different possible locations
-    const file = 
+    const fileObj = 
       info.file.originFileObj || 
       (info.file as any).originFileObj || 
       (info.file as any)
     
     // Check if it's actually a File object
-    if (file && file instanceof File) {
+    if (fileObj && fileObj instanceof File) {
       // Validate file type
-      const isJpgOrPng = file.type === 'image/jpeg' || file.type === 'image/png'
+      const isJpgOrPng = fileObj.type === 'image/jpeg' || fileObj.type === 'image/png'
       if (!isJpgOrPng) {
         message.error('You can only upload JPG/PNG file!')
         return
       }
       // Validate file size
-      const isLt2M = file.size / 1024 / 1024 < 2
+      const isLt2M = fileObj.size / 1024 / 1024 < 2
       if (!isLt2M) {
         message.error('Image must smaller than 2MB!')
         return
@@ -207,7 +207,7 @@ export default function Personal({
       reader.onerror = () => {
         message.error('Failed to read image file')
       }
-      reader.readAsDataURL(file)
+      reader.readAsDataURL(fileObj)
       
       // Update file list for Upload component
       setAvatarFile([info.file])
@@ -362,6 +362,7 @@ export default function Personal({
                   onChange={handleAvatarChange}
                   accept="image/jpeg,image/png"
                   maxCount={1}
+                  fileList={avatarFile}
                 >
                   {formData.avatar && !formData.avatar.startsWith('data:') ? (
                     <img src={formData.avatar} alt="avatar" className={styles.avatarImage} />

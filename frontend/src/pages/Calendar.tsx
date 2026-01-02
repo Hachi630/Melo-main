@@ -73,7 +73,7 @@ function DraggableCalendarItem({ item, onClick, isMonthView = false }: { item: C
 }
 
 // Droppable Date Cell Component
-function DroppableDateCell({ date, children, isToday, onDateClick }: { date: Dayjs, children: React.ReactNode, isToday?: boolean, onDateClick: (date: Dayjs) => void }) {
+function DroppableDateCell({ date, children, onDateClick }: { date: Dayjs, children: React.ReactNode, onDateClick: (date: Dayjs) => void }) {
   const { setNodeRef, isOver } = useDroppable({
     id: date.format('YYYY-MM-DD'),
     data: { date },

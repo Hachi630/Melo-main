@@ -155,6 +155,7 @@ export default function LinkedInDashboard({
   const [selectedImage, setSelectedImage] = useState<File | null>(null);
   const [imagePreview, setImagePreview] = useState<string | null>(null);
   const [posting, setPosting] = useState(false);
+  const [postModalOpen, setPostModalOpen] = useState(false);
   const [uploadProgress, setUploadProgress] = useState(0);
 
   // LinkedIn Enhanced post type states
@@ -198,6 +199,7 @@ export default function LinkedInDashboard({
   const [instagramLinkUrl, setInstagramLinkUrl] = useState("");
   const [instagramLinkTitle, setInstagramLinkTitle] = useState("");
   const [instagramLinkDescription, setInstagramLinkDescription] = useState("");
+  const [instagramPosting, setInstagramPosting] = useState(false);
 
   // Facebook Post states
   const [facebookPostText, setFacebookPostText] = useState("");
