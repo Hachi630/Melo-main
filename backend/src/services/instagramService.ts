@@ -659,6 +659,10 @@ export async function shareToInstagram(
   )
 
   // Step 2: Publish the media
-  return await publishMedia(instagramAccountId, accessToken, creationId)
+  const result = await publishMedia(instagramAccountId, accessToken, creationId)
+  return {
+    postId: result.id,
+    permalink: result.permalink,
+  }
 }
 

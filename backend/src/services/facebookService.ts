@@ -178,7 +178,7 @@ export async function shareToFacebook(
       hasLink: !!content.linkUrl,
     })
 
-    let postId: string
+    let postId: string = ''
     let permalink: string | undefined
 
     // If video is provided, create a post with video
@@ -278,6 +278,10 @@ export async function shareToFacebook(
       )
       postId = postResponse.data.id
       permalink = `https://www.facebook.com/${postId}`
+    }
+
+    if (!postId) {
+      throw new Error('Failed to create Facebook post: postId is missing')
     }
 
     return {

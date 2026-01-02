@@ -3,7 +3,7 @@ import qs from "qs";
 import axios from "axios";
 
 import LinkedInToken from "../models/LinkedInToken";
-import { signToken } from "../utils/jwt";
+import { generateToken } from "../utils/jwt";
 import { requireAuth } from "../middleware/auth";
 import {
   getLinkedInMemberId,

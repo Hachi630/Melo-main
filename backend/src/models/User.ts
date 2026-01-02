@@ -114,10 +114,6 @@ const UserSchema: Schema = new Schema(
       type: String,
       trim: true,
     },
-    avatar: {
-      type: String,
-      trim: true,
-    },
     industry: {
       type: String,
       trim: true,
